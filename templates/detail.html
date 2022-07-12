@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ef17e6c046.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+        }
+        .banner {
+            text-align: right;
+
+            color: antiquewhite;
+
+            background-color: red;
+            height: 200px;
+        }
+        .banner > button {
+            padding:0;
+            border: none;
+            background: none;
+        }
+        .wrap {
+            width: 500px;
+            margin: auto;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrap > button {
+            margin-right: 100px;
+            border-radius: 50px;
+            border:1px solid white
+        }
+        /*.board {*/
+        /*    width: 1200px;*/
+        /*    margin: 20px auto 0 auto;*/
+        /*}*/
+    </style>
+    <script>
+        function save_board() {
+            $.ajax({
+                type: "POST",
+                url: `/api/save_board`,
+                data: {},
+                success: function (response) {
+                    alert(response["msg"])
+                }
+            });
+        }
+    </script>
+
+    <title></title>
+</head>
+
+<body>
+    <div class="banner">
+        닉네임
+        <button type="button" class="btn btn-outline-info">logout</button>
+    </div>
+    <div class="wrap">
+        <button type="button" onclick="save_board()" class="btn btn-outline-info">보드게임 등록</button>
+    </div>
+
+<!--    <div class="board">-->
+<!--        <div class="row row-cols-1 row-cols-md-4 g-4">-->
+<!--            <div class="col">-->
+<!--                <div class="card">-->
+<!--                    <img src="https://search.pstatic.net/common?type=f&size=150x150&quality=75&direct=true&src=https%3A%2F%2Fnng-phinf.pstatic.net%2FMjAyMjA3MDZfMjMw%2FMDAxNjU3MDgxODMzMjI4.DKFbhBWw_H29_cuciofxYbcEMox4UwZ03ChevUnPPCAg.7DiqazXuzUnpRoOifzd72ICPj21jjpJdy9bEp81DnbEg.JPEG%2F%25ED%2585%258D%25EC%2582%25AC%25EC%258A%25A4_624.jpg"-->
+<!--                         class="card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">제목</h5>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--                <div class="card">-->
+<!--                    <img src="https://search.pstatic.net/common?type=f&size=150x150&quality=75&direct=true&src=https%3A%2F%2Fnng-phinf.pstatic.net%2FMjAyMjA3MDZfMjMw%2FMDAxNjU3MDgxODMzMjI4.DKFbhBWw_H29_cuciofxYbcEMox4UwZ03ChevUnPPCAg.7DiqazXuzUnpRoOifzd72ICPj21jjpJdy9bEp81DnbEg.JPEG%2F%25ED%2585%258D%25EC%2582%25AC%25EC%258A%25A4_624.jpg"-->
+<!--                         class="card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">제목</h5>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--                <div class="card">-->
+<!--                    <img src="https://search.pstatic.net/common?type=f&size=150x150&quality=75&direct=true&src=https%3A%2F%2Fnng-phinf.pstatic.net%2FMjAyMjA3MDZfMjMw%2FMDAxNjU3MDgxODMzMjI4.DKFbhBWw_H29_cuciofxYbcEMox4UwZ03ChevUnPPCAg.7DiqazXuzUnpRoOifzd72ICPj21jjpJdy9bEp81DnbEg.JPEG%2F%25ED%2585%258D%25EC%2582%25AC%25EC%258A%25A4_624.jpg"-->
+<!--                         class="card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">제목</h5>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--                <div class="card">-->
+<!--                    <img src="https://search.pstatic.net/common?type=f&size=150x150&quality=75&direct=true&src=https%3A%2F%2Fnng-phinf.pstatic.net%2FMjAyMjA3MDZfMjMw%2FMDAxNjU3MDgxODMzMjI4.DKFbhBWw_H29_cuciofxYbcEMox4UwZ03ChevUnPPCAg.7DiqazXuzUnpRoOifzd72ICPj21jjpJdy9bEp81DnbEg.JPEG%2F%25ED%2585%258D%25EC%2582%25AC%25EC%258A%25A4_624.jpg"-->
+<!--                         class="card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">제목</h5>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+</body>
+
+</html>
